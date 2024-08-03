@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes as Switch, Navigate} from "react-router-dom"
-import { Dashboard } from "../pages";
+import { Dashboard, Login } from "../pages";
 
 
+//config do react route dom padrão
 
 export const Routes = () => {
 
@@ -9,12 +10,13 @@ export const Routes = () => {
         <BrowserRouter>
          <Switch>
 
-            {/* quando o navegador for pra rota '/' = Ola */}
+            {/* quando o navegador for pra rota '/pagina-inicial' vai para a pagina "Dashboard"  */}
             <Route path="/pagina-inicial" element={<Dashboard />} /> 
+            <Route path="/entar" element={<Login />} /> 
 
 
 
-          {/* se a url não se encaixar com nenhuma a cima */}
+           {/* se a url não se encaixar com nenhuma a cima */}
            <Route path="*" element={<Navigate to="pagina-inicial" />}/>
 
          </Switch>
